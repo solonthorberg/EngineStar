@@ -4,6 +4,7 @@
 class GameManager {
    public:
 	void run_game();
+	void management_mode();
 };
 
 #endif
