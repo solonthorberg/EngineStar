@@ -4,13 +4,13 @@
 #include "starship.h"
 
 class Stealthship : public Starship {
-   public:
-	Stealthship(std::string name, int health, int attack, int defence);
+  public:
+    Stealthship(std::string name, int health, int attack, int defence);
 
-	int compute_damage();
-	void print_actions();
-	int get_num_actions();
-	Action get_action();
+    int compute_damage();
+    void print_actions();
+    int get_num_actions();
+    Action get_action();
 };
 
 #endif

@@ -6,19 +6,19 @@
 #include "../incl/starship_manager.h"
 #include "../incl/stealthship.h"
 
-std::vector<Starship*> StarshipManager::createShipList() {
-	std::vector<Starship*> ships;
+std::vector<Starship *> StarshipManager::createShipList() {
+    std::vector<Starship *> ships;
 
-	ships.push_back(new Fighter("Wraith", 80, 70, 65));
+    ships.push_back(new Fighter("Wraith", 80, 70, 65));
 
-	ships.push_back(new Battleship("Iron Orbit", 95, 40, 70));
+    ships.push_back(new Battleship("Iron Orbit", 95, 40, 70));
 
-	ships.push_back(new Stealthship("Eclipse", 50, 70, 65));
+    ships.push_back(new Stealthship("Eclipse", 50, 70, 65));
 
-	return ships;
+    return ships;
 };
 
-Starship* StarshipManager::starship_selecter() {
-	vector<Starship*> ships = createShipList();
-	print_starship_manager_menu();
+Starship *StarshipManager::starship_selecter() {
+    vector<Starship *> ships = createShipList();
+    print_starship_manager_menu();
 }

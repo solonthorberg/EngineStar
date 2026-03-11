@@ -1,3 +1,3 @@
 
 
-std::string Fighter::get_type() const { return "Fighter" }
+std::string Fighter::get_type() const {return "Fighter"}

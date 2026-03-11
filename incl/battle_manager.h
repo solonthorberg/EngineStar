@@ -2,8 +2,8 @@
 #define BATTLE_MANAGER_H
 
 class BattleManager {
-   public:
-	static void battle_simulation();
+  public:
+    static void battle_simulation();
 };
 
 #endif

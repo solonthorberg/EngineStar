@@ -2,9 +2,9 @@
 #define GAME_MANAGER_H
 
 class GameManager {
-   public:
-	void run_game();
-	void management_mode();
+  public:
+    void run_game();
+    void management_mode();
 };
 
 #endif
