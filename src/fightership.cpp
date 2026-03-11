@@ -1,3 +1,29 @@
+#include "../incl/fightership.h"
+#include <iostream>
 
+void Fightership::print_actions() {
+    std::cout << this->name << " actions:" << std::endl;
+    std::cout << "1. Attack" << std::endl;
+    std::cout << "2. Repair" << std::endl;
+    std::cout << "3. Shield" << std::endl;
+    std::cout << "4. Evade" << std::endl;
+}
 
-std::string Fighter::get_type() const {return "Fighter"}
+int Fightership::get_num_actions() { return 4; }
+
+Action Fightership::get_action(int choice) {
+    switch (choice) {
+    case 1:
+        return Action::Attack;
+    case 2:
+        return Action::Repair;
+    case 3:
+        return Action::Shield;
+    case 4:
+        return Action::Evade;
+    default:
+        return Action::None;
+    }
+}
+
+std::string Fightership::get_type() const { return "Fightership"; }

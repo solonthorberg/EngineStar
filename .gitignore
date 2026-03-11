@@ -39,3 +39,10 @@
 
 # debug information files
 *.dwo
+
+# Vim/Neovim swap files
+*.swp
+*.swo
+*.swn
+[._]*.s[a-v][a-z]
+[._]s[a-v][a-z]

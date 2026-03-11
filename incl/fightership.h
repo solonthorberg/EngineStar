@@ -2,15 +2,16 @@
 #define FIGHTERSHIP_H
 
 #include "starship.h"
+#include <string>
 
 class Fightership : public Starship {
   public:
     Fightership(std::string name, int health, int attack, int defence);
 
-    int compute_damage();
-    void print_actions();
-    int get_num_actions();
-    Action get_action();
+    void print_actions() override;
+    int get_num_actions() override;
+    Action get_action(int choice) override;
+
     std::string get_type() const override;
 };
 
