@@ -6,7 +6,7 @@
 #include "./starship.h"
 
 class StarshipManager {
-    std::vector<Starship *> createShipList();
+    std::vector<Starship *> initializeStarships();
     Starship *starship_selecter();
 };
 
