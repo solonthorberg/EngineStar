@@ -2,6 +2,7 @@
 
 #include "../incl/console_manager.h"
 #include "../incl/game_manager.h"
+#include "../incl/starship_manager.h"
 
 void GameManager::run_game() {
     void print_title();
@@ -27,7 +28,7 @@ void GameManager::management_mode() {
             // start game
         case CHOOSE_SHIP:
             // choose game
-            StarshipManager();
+			Starship::starship_selector();
         case QUIT:
             loop = 0;
             break;
