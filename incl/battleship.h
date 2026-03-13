@@ -11,7 +11,7 @@ class Battleship : public Starship {
     void print_actions() override;
     int get_num_actions() override;
     Action get_action(int choice) override;
-	std::string get_type() const override;
+    std::string get_type() const override;
 };
 
 #endif

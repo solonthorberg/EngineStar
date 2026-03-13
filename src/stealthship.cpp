@@ -1,6 +1,9 @@
 #include "../incl/stealthship.h"
 #include <iostream>
 
+Stealthship::Stealthship(std::string name, int health, int attack, int defence)
+    : Starship(name, health, attack, defence) {}
+
 void Stealthship::print_actions() {
     std::cout << this->name << " actions:" << std::endl;
     std::cout << "1. Attack" << std::endl;

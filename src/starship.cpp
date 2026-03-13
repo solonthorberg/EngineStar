@@ -1,26 +1,30 @@
 #include "../incl/starship.h"
 #include <iostream>
-#include <algorithm>
-
-std::vector<Starship*> Starship::registry;
 
 Starship::Starship(std::string name, int health, int attack, int defence)
-    : name(name), health(health), attack(attack), defence(defence) {
-		registry.push_back(this);
-	}
-
-Starship::~Starship() {
-	auto removed = std::find(registry.begin(), registry.end(), this);
-
-	if (removed != registry.end()) {
-		registry.erase(removed);
-	}
-}
-
+    : name(name), health(health), max_health(health), attack(attack),
+      defence(defence) {}
 
 int Starship::compute_damage() { return this->attack; }
 
+void Starship::get_repair(int amount) {
+    this->health += amount;
+    if (this->health > this->max_health) {
+        this->health = this->max_health;
+    }
+}
+
+void Starship::add_shield(int amount) { this->defence += amount; }
+
+void Starship::evade() { this->is_evading = true; }
+
 void Starship::take_damage(int amount) {
+    if (this->is_evading) {
+        std::cout << this->name << " dodged the attack!" << std::endl;
+        this->is_evading = false;
+        return;
+    }
+
     int reduced_damage = amount - this->defence;
     if (reduced_damage < 0)
         reduced_damage = 0;
@@ -37,21 +41,10 @@ void Starship::take_damage(int amount) {
 
 bool Starship::is_alive() const { return this->health > 0; }
 
+int Starship::get_health() const { return this->health; }
+
+int Starship::get_attack() const { return this->attack; }
+
+int Starship::get_defence() const { return this->defence; }
+
 std::string Starship::get_name() const { return this->name; }
-
-void Starship::print_ships_by_type(std::string targetType) {
-	std::cout << "Available " << targetType << " Ships:" << std::endl;
-
-	bool found = false;
-
-	for (const auto &ship : registry) {
-		if (ship->get_type() == targetType) {
-			std::cout << " > " << ship->name << std::endl;
-			found = true;
-		}
-	}
-
-	if (!found) {
-		std::cout << "No ships found for: " << targetType << std::endl;
-	}
-}

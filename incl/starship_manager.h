@@ -4,10 +4,13 @@
 #include <vector>
 
 #include "./starship.h"
+#include <memory>
 
 class StarshipManager {
-    std::vector<Starship *> initializeStarships();
-    Starship *starship_selecter();
+  public:
+    std::vector<std::unique_ptr<Starship>> initializeStarships();
+    Starship *
+    starship_selecter(std::vector<std::unique_ptr<Starship>> &available_ships);
 };
 
 #endif
